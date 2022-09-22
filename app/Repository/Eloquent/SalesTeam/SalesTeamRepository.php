@@ -21,7 +21,7 @@ class SalesTeamRepository extends BaseRepository implements SalesTeamRepositoryI
     /**
      * @return Collection
      */
-    public function all()
+    public function all(): Collection
     {
         // TODO: Implement all() method.
         return $this->model->all();
@@ -29,8 +29,9 @@ class SalesTeamRepository extends BaseRepository implements SalesTeamRepositoryI
 
     /**
      * @param String $id
+     * @return int
      */
-    public function delete(string $id)
+    public function delete(string $id): int
     {
         // TODO: Implement delete() method.
         return $this->model->destroy($id);

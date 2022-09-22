@@ -3,11 +3,12 @@
 namespace App\Repository\SalesTeam;
 
 use App\Models\SalesTeam;
+use Illuminate\Support\Collection;
 
 interface SalesTeamRepositoryInterface
 {
-    public function all();
+    public function all(): Collection;
 
-    public function delete(string $id);
+    public function delete(string $id): int;
 }
 
