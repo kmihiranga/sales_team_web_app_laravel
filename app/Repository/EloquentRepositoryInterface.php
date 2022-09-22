@@ -20,5 +20,5 @@ interface EloquentRepositoryInterface
      * @param $id
      * @return Model
      */
-    public function find($id): ?Model;
+    public function find(string $id): ?Model;
 }
