@@ -11,6 +11,8 @@ class SalesTeam extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'sales_team';
+
     public $incrementing = false;
 
     public static function boot() 
@@ -22,5 +24,9 @@ class SalesTeam extends Model
         });
     }
 
-    protected $fillable = ['person_name', 'email', 'telephone', 'current_route', 'joined_date', 'comments'];
+    protected $fillable = ['id', 'person_name', 'email', 'telephone', 'current_route', 'joined_date', 'comments', 'created_at', 'updated_at'];
+
+    protected $casts = [
+        'id' => 'string'
+    ];
 }
