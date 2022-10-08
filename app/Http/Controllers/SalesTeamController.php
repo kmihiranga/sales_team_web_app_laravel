@@ -21,7 +21,7 @@ class SalesTeamController extends Controller
      */
     public function index()
     {
-        $salesTeams = $this->salesTeamRepository->all();
+        $salesTeams = $this->salesTeamRepository->paginate();
         return view('sales_team.index', compact('salesTeams'));
     }
 
