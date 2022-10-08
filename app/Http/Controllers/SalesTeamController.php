@@ -21,7 +21,8 @@ class SalesTeamController extends Controller
      */
     public function index()
     {
-        return $this->salesTeamRepository->all();
+        $salesTeams = $this->salesTeamRepository->all();
+        return view('sales_team.index', compact('salesTeams'));
     }
 
     /**
@@ -94,9 +95,9 @@ class SalesTeamController extends Controller
         // update sales team details related to the id
         $updateSalesTeamById = $salesTeamById->update($request->all());
         if($updateSalesTeamById) {
-            return redirect(route('sales_team.index', compact(['message' => 'Sales team details updated successfully!.', 'status' => 200])));
+            return redirect(route('sales_team.index'))->with(['message' => 'Sales team details updated successfully!.', 'status' => 200]);
         } else {
-            return redirect(route('sales_team.index', compact(['message' => 'Error updating sales team details.', 'status' => 500])));
+            return redirect(route('sales_team.index'))->with(['message' => 'Error updating sales team details.', 'status' => 500]);
         }
     }
 
@@ -112,9 +113,9 @@ class SalesTeamController extends Controller
         $salesTeamById = $this->salesTeamRepository->find($id);
         $deleteSalesTeam = $this->salesTeamRepository->delete($salesTeamById->id);
         if($deleteSalesTeam) {
-            return redirect(route('sales_team.index', compact(['message' => 'Sales team deleted successfully!.', 'status' => 200])));
+            return redirect(route('sales_team.index'))->with(['message' => 'Sales team deleted successfully!.', 'status' => 200]);
         } else {
-            return redirect(route('sales_team.index', compact(['message' => 'Error deleting sales team details.', 'status' => 500])));
+            return redirect(route('sales_team.index'))->with(['message' => 'Error deleting sales team details.', 'status' => 500]);
         }
     }
 
@@ -129,7 +130,7 @@ class SalesTeamController extends Controller
         return $this->validate($request, [
             'person_name' => 'required|string|max:255',
             'email' => 'required|string|max:255|unique:sales_team,email,'.$id.',id,deleted_at,NULL',
-            'telephone' => 'required|number',
+            'telephone' => 'required|numeric',
             'current_route' => 'required|string',
             'joined_date' => 'required|date',
             'comments' => 'nullable|string'

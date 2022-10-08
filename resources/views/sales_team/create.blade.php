@@ -13,7 +13,7 @@
                 <div class="row g-3">
                     <div class="col-sm-6">
                         <label for="firstName" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="Enter full name..." value="{{  }}" required>
+                        <input type="text" class="form-control" id="firstName" placeholder="Enter full name..." value="" required>
                         <div class="invalid-feedback">
                             Valid first name is required.
                         </div>

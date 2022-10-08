@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sales_teams', function (Blueprint $table) {
+        Schema::create('sales_team', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('person_name');
             $table->string('email');
