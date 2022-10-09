@@ -13,7 +13,11 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                <x-secondary-button :type="'button'" :class-name="'float-end'" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New</x-secondary-button>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <x-link-button :class-name="'secondary float-end'" href="{{ route('sales_team.create') }}">Add New</x-link-button>
+                    </div>
                 </div>
                 <div class="row mt-5">
                     <div class="container">

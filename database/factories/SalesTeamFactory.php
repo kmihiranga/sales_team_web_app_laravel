@@ -22,7 +22,6 @@ class SalesTeamFactory extends Factory
             'person_name' => $this->faker->name(),
             'email' => $this->faker->unique()->email(),
             'telephone' => rand(1, 9),
-            'current_route' => $this->faker->city(),
             'joined_date' => $this->faker->date(),
             'comments' => $this->faker->text(),
             'created_at' => Carbon::now(),

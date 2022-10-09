@@ -4,15 +4,8 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class SecondaryButton extends Component
+class TextField extends Component
 {
-    /**
-     * button type
-     * 
-     * @var string
-     */
-    public $type;
-
     /**
      * class name
      * 
@@ -21,22 +14,21 @@ class SecondaryButton extends Component
     public $className;
 
     /**
-     * button value
+     * button type
      * 
      * @var string
      */
-    public $value;
+    public $type;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($type, $className, $value)
+    public function __construct($className, $type)
     {
-        $this->type = $type;
         $this->className = $className;
-        $this->value = $value;
+        $this->type = $type;
     }
 
     /**
@@ -46,6 +38,6 @@ class SecondaryButton extends Component
      */
     public function render()
     {
-        return view('components.secondary-button');
+        return view('components.text-field');
     }
 }

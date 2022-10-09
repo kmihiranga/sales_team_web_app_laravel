@@ -4,15 +4,8 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class SecondaryButton extends Component
+class LinkButton extends Component
 {
-    /**
-     * button type
-     * 
-     * @var string
-     */
-    public $type;
-
     /**
      * class name
      * 
@@ -21,22 +14,13 @@ class SecondaryButton extends Component
     public $className;
 
     /**
-     * button value
-     * 
-     * @var string
-     */
-    public $value;
-
-    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($type, $className, $value)
+    public function __construct($className)
     {
-        $this->type = $type;
         $this->className = $className;
-        $this->value = $value;
     }
 
     /**
@@ -46,6 +30,6 @@ class SecondaryButton extends Component
      */
     public function render()
     {
-        return view('components.secondary-button');
+        return view('components.link-button');
     }
 }

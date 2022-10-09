@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\CurrentRoute;
 use Illuminate\Database\Seeder;
 use Database\Seeders\SalesTeamSeeder;
 
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            CurrentRouteSeeder::class,
             SalesTeamSeeder::class,
         ]);
     }
