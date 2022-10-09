@@ -20,7 +20,7 @@
                     <td>{{ $salesTeam->telephone }}</td>
                     <td>{{ $salesTeam->current_route }}</td>
                     <td>
-                        <x-external-link href="{{ route('sales_team.show', $salesTeam->id) }}">View</x-external-link>
+                        <x-external-link role="button" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $salesTeam->id }}"  href="#">View</x-external-link>
                         <x-external-link href="#">Edit</x-external-link>
                         <x-external-link href="#">Delete</x-external-link>
                     </td>
@@ -29,4 +29,11 @@
             @endif
         </tbody>
     </table>
+    
+<!-- modal -->
+@if(!empty($salesTeams))
+    @foreach($salesTeams as $salesTeam)
+        <x-sales-team.modal :id="$salesTeam->id" :sales-team="$salesTeam"></x-sales-team.modal>
+    @endforeach
+@endif
 </div>

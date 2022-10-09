@@ -8,13 +8,17 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h3>Sales Team</h3>
-                        <x-secondary-button :type="'button'" :class-name="'float-end'">Add New</x-secondary-button>
                     </div>
                 </div>
             </div>
             <div class="card-body">
-                <div class="container">
-                    <x-sales-team.data-table :sales-teams="$salesTeams"></x-sales-team.data-table>
+                <div class="row">
+                <x-secondary-button :type="'button'" :class-name="'float-end'" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New</x-secondary-button>
+                </div>
+                <div class="row mt-5">
+                    <div class="container">
+                        <x-sales-team.data-table :sales-teams="$salesTeams"></x-sales-team.data-table>
+                    </div>
                 </div>
             </div>
             <div class="card-footer">
