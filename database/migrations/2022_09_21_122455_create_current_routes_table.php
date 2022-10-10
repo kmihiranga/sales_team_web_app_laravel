@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -14,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sales_team', function (Blueprint $table) {
+        Schema::create('current_routes', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('person_name');
-            $table->string('email');
-            $table->smallInteger('telephone');
-            $table->string('current_route');
-            $table->date('joined_date');
-            $table->text('comments')->nullable();
+            $table->string('route_name');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -34,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sales_teams');
+        Schema::dropIfExists('current_routes');
     }
 };
