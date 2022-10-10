@@ -4,39 +4,23 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class TextField extends Component
+class DatePicker extends Component
 {
     /**
-     * button type
-     * 
-     * @var string
-     */
-    public $type;
-
-    /**
-     * id
+     * datepicker id
      * 
      * @var string
      */
     public $id;
 
     /**
-     * placeholder value
-     * 
-     * @var string
-     */
-    public $placeholder;
-
-    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($type, $id, $placeholder)
+    public function __construct($id)
     {
-        $this->type = $type;
         $this->id = $id;
-        $this->placeholder = $placeholder;
     }
 
     /**
@@ -46,6 +30,6 @@ class TextField extends Component
      */
     public function render()
     {
-        return view('components.text-field');
+        return view('components.date-picker');
     }
 }

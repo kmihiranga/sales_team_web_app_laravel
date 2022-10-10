@@ -1,3 +1,1 @@
-<button {{ $attributes->merge(['btn', 'btn-'. $className]) }} type="{{ $type }}">
-    {{ $slot }}
-</button>
+<input {{ $attributes }} type="{{ $type }}" id="{{ $id }}" class="form-control @error($id) is-invalid @enderror" placeholder="Enter {{ $placeholder }}..." autocomplete="off" />

@@ -4,24 +4,17 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class TextField extends Component
+class Selection extends Component
 {
     /**
-     * button type
-     * 
-     * @var string
-     */
-    public $type;
-
-    /**
-     * id
+     * selection id
      * 
      * @var string
      */
     public $id;
 
     /**
-     * placeholder value
+     * placeholder
      * 
      * @var string
      */
@@ -32,9 +25,8 @@ class TextField extends Component
      *
      * @return void
      */
-    public function __construct($type, $id, $placeholder)
+    public function __construct($id, $placeholder)
     {
-        $this->type = $type;
         $this->id = $id;
         $this->placeholder = $placeholder;
     }
@@ -46,6 +38,6 @@ class TextField extends Component
      */
     public function render()
     {
-        return view('components.text-field');
+        return view('components.selection');
     }
 }
