@@ -21,7 +21,7 @@ class SalesTeamFactory extends Factory
         return [
             'person_name' => $this->faker->name(),
             'email' => $this->faker->unique()->email(),
-            'telephone' => rand(1, 9),
+            'telephone' => $this->faker->numerify('##########'),
             'joined_date' => $this->faker->date(),
             'comments' => $this->faker->text(),
             'created_at' => Carbon::now(),

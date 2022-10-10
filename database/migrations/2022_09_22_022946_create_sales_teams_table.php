@@ -18,7 +18,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('person_name');
             $table->string('email');
-            $table->smallInteger('telephone');
+            $table->string('telephone', 10);
             $table->string('current_route');
             $table->date('joined_date');
             $table->text('comments')->nullable();
