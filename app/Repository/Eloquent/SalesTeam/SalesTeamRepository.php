@@ -25,7 +25,7 @@ class SalesTeamRepository extends BaseRepository implements SalesTeamRepositoryI
     public function all(): Collection
     {
         // TODO: Implement all() method.
-        return $this->model->all();
+        return $this->model->latest()->get();
     }
 
     /**
@@ -34,7 +34,7 @@ class SalesTeamRepository extends BaseRepository implements SalesTeamRepositoryI
     public function paginate(): LengthAwarePaginator 
     {
         // TODO: Implement paginate() method.
-        return $this->model->paginate(10);
+        return $this->model->latest()->paginate(10);
     }
 
     /**

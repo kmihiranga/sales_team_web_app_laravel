@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository\Eloquent\CurrentRoutes\CurrentRoutesRepository;
 use Illuminate\Http\Request;
 use App\Repository\Eloquent\SalesTeam\SalesTeamRepository;
 
 class SalesTeamController extends Controller
 {
     private $salesTeamRepository;
+    private $currentRoutesRepository;
 
-    public function __construct(SalesTeamRepository $salesTeamRepository)
+    public function __construct(SalesTeamRepository $salesTeamRepository, CurrentRoutesRepository $currentRoutesRepository)
     {
         $this->salesTeamRepository = $salesTeamRepository;
+        $this->currentRoutesRepository = $currentRoutesRepository;
     }
 
     /**
@@ -32,7 +35,9 @@ class SalesTeamController extends Controller
      */
     public function create()
     {
-        return view('sales_team.create');
+        // retrieve current routes list
+        $currentRoutes = $this->currentRoutesRepository->all();
+        return view('sales_team.create', compact('currentRoutes'));
     }
 
     /**
