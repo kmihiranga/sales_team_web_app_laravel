@@ -81,7 +81,9 @@ class SalesTeamController extends Controller
     {
         // find sales team by id
         $salesTeamById = $this->salesTeamRepository->find($id);
-        return view('sales_team.edit', compact('salesTeamById'));
+        // current routes list
+        $currentRoutes = $this->currentRoutesRepository->all();
+        return view('sales_team.edit', compact(['salesTeamById', 'currentRoutes']));
     }
 
     /**

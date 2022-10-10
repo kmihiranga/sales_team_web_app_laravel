@@ -21,7 +21,7 @@
                     <td>{{ $salesTeam->current_route }}</td>
                     <td>
                         <x-external-link role="button" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $salesTeam->id }}"  href="#">View</x-external-link>
-                        <x-external-link href="#">Edit</x-external-link>
+                        <x-external-link href="{{ route('sales_team.edit', $salesTeam->id) }}">Edit</x-external-link>
                         <x-external-link href="#">Delete</x-external-link>
                     </td>
                 </tr>
