@@ -71,6 +71,9 @@ For testing, you can run below command to check all test cases.
 ```
 ./vendor/bin/pest
 ```
+We used pest php test framework for tests.
+
+- **[PEST PHP](https://pestphp.com/)**
 
 ## License
 
