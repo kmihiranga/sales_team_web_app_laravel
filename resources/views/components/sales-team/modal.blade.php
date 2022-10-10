@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <th>Current Routes:</th>
-                <td>{{ $salesTeam->current_route }}</td>
+                <td>{{ $salesTeam->currentRoute->route_name }}</td>
             </tr>
             <tr>
                 <th>Comments:</th>

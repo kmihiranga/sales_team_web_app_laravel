@@ -58,6 +58,12 @@ if you need to refresh the database you can run below command.
 php artisan migrate:fresh
 ```
 
+you can route through this url for access sales team details
+
+```
+localhost:8091/sales_team
+```
+
 ### Testing Environment
 
 For testing, you can run below command to check all test cases.
