@@ -5,6 +5,7 @@ namespace App\Repository\Eloquent\SalesTeam;
 use App\Models\SalesTeam;
 use App\Repository\Eloquent\BaseRepository;
 use App\Repository\SalesTeam\SalesTeamRepositoryInterface;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 class SalesTeamRepository extends BaseRepository implements SalesTeamRepositoryInterface
@@ -24,7 +25,16 @@ class SalesTeamRepository extends BaseRepository implements SalesTeamRepositoryI
     public function all(): Collection
     {
         // TODO: Implement all() method.
-        return $this->model->all();
+        return $this->model->latest()->get();
+    }
+
+    /**
+     * @return LengthAwarePaginator
+     */
+    public function paginate(): LengthAwarePaginator 
+    {
+        // TODO: Implement paginate() method.
+        return $this->model->latest()->paginate(10);
     }
 
     /**

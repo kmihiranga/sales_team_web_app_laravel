@@ -7,11 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
-class SalesTeam extends Model
+class CurrentRoute extends Model
 {
     use HasFactory, SoftDeletes;
-
-    protected $table = 'sales_team';
 
     public $incrementing = false;
 
@@ -24,14 +22,9 @@ class SalesTeam extends Model
         });
     }
 
-    protected $fillable = ['id', 'person_name', 'email', 'telephone', 'current_route', 'joined_date', 'comments', 'created_at', 'updated_at'];
+    protected $fillable = ['route_name', 'created_at', 'updated_at'];
 
     protected $casts = [
         'id' => 'string'
     ];
-
-    public function currentRoute() 
-    {
-        return $this->belongsTo(CurrentRoute::class, 'current_route');
-    }
 }

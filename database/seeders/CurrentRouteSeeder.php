@@ -3,11 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\CurrentRoute;
-use App\Models\SalesTeam;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class SalesTeamSeeder extends Seeder
+class CurrentRouteSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,11 +15,6 @@ class SalesTeamSeeder extends Seeder
      */
     public function run()
     {
-        $currentRoutes = CurrentRoute::factory()->create();
-
-        SalesTeam::factory()
-            ->count(50)
-            ->for($currentRoutes)
-            ->create();
+        CurrentRoute::factory()->trashed()->count(50)->create();
     }
 }
